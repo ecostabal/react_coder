@@ -1,0 +1,37 @@
+.carrito {
+    padding: 20px;
+    width: 100px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #e8e8e8;
+
+}
+
+.carrito:hover {
+    background-color: rgba(30, 87, 53, 0.157);
+    transition: 1s;
+}
+
+
+.carrito p {
+    background-color: rgb(18, 158, 86);
+    filter: drop-shadow(0px 10px 20px rgba(134, 171, 191, 0.2));
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
+
+.icono {
+    width: 50px;
+}
