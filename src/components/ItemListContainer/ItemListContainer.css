@@ -1,7 +1,8 @@
 .divContainer {
-    justify-content: center;
-    height: 400px;
+    margin-top: 60px;
+    margin-bottom: 100px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 60px;
 }
