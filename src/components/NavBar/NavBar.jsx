@@ -10,10 +10,31 @@ function NavBar(props){
         </div>
         <div className="menu">
             <ul>
-                <li><Link className="linkStyle" to="/" href="#">Home</Link></li>
-                <li><Link to="/product">Detalle</Link></li>
-                <li><Link to="/">Productos</Link></li>
-                <li><Link to="/">Contacto</Link></li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/" href="#">
+                        Home
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/">
+                        Tienda
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/category/juguetes">
+                        Juguetes
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/category/accesorios">
+                        Accesorios
+                    </Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="nav-link" to="/category/comida">
+                        Comida
+                    </Link>
+                </li>
             </ul>
         </div>
         <CartWidget/>
