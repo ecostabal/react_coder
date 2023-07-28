@@ -18,17 +18,17 @@ function ItemDetailContainer() {
 
     return(
         <>
-        <div>
-            <img src={product.img} alt="" />
-        </div>
-        <div>
-            <h2>{product.title}</h2>
-        </div>
-        <div>
-            <h4>{product.price}</h4>
-            <small>{product.description}</small>
-        </div>
-    </>
+            <div>
+                <img src={product.img} alt="" />
+            </div>
+            <div>
+                <h2>{product.title}</h2>
+            </div>
+            <div>
+                <h4>{product.price}</h4>
+                <small>{product.description}</small>
+            </div>
+        </>
     )
 }
 

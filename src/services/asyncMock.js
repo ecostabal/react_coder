@@ -110,7 +110,7 @@ function getData () {
 export function getProductData (idURL) {
    return new Promise ((resolve, reject) => {
       const productRequested = productos.find(
-         (item) = item.id === Number(idURL)
+         (item) => item.id === Number(idURL)
       )
       setTimeout( () => {
         resolve(productRequested);
