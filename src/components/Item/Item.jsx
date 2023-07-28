@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+import ButtonComponent from "../ButtonComponent/ButtonComponent";
 import "./Item.css";
 
 
 function Item(props) {
-    const {title,description, img, price, stock} = props;
+    const {id, title,description, img, price, stock} = props;
 
     return (
         <div className="tarjeta">
@@ -11,6 +13,9 @@ function Item(props) {
             <p>{description}</p>
             <h2>💰 $ {price}</h2>
             <span>Unidades Disponibles: {stock}</span>
+            <Link to={`/product/${id}`}>
+                <ButtonComponent>Ver Producto</ButtonComponent>
+            </Link>
         </div>
     )
 }
