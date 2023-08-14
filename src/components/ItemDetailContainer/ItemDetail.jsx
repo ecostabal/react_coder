@@ -1,7 +1,13 @@
 import React from "react";
+import { Link } from 'react-router-dom'; // Importa Link desde react-router-dom
+import ItemCount from '../ItemCount/ItemCount';
+import ButtonComponent from "../ButtonComponent/ButtonComponent";
 
 function ItemDetail(props) {
   const {product} = props;
+  const handleAddToCart = () => {
+    // Lógica para agregar al carrito
+  };
     return (
         <div className="item-detail-container"> {/* Aplica la clase CSS para el contenedor principal */}
         <div>
