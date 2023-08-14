@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getProductData } from "../../services/asyncMock";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./ItemDetailContainer.css"; // Importa el archivo CSS
 import ItemDetail from "../ItemDetail/ItemDetail";
 
