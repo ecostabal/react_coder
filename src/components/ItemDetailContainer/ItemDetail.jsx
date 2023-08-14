@@ -34,11 +34,11 @@ function ItemDetailContainer() {
       <h2 className="item-detail-title">{product.title}</h2> {/* Aplica la clase CSS para el título */}
     </div>
     <div>
-      <h4 className="item-detail-price">{product.price}</h4> {/* Aplica la clase CSS para el precio */}
+      <h4 className="item-detail-price">$ {product.price}</h4> {/* Aplica la clase CSS para el precio */}
       <small className="item-detail-description">{product.description}</small> {/* Aplica la clase CSS para la descripción */}
     
     </div>
-    <ItemCount stock={4} onConfirm={handleAddToCart} />
+    <ItemCount stock={5} onConfirm={handleAddToCart} />
     <Link to="/">
     <ButtonComponent>Volver al inicio</ButtonComponent>
     </Link>
