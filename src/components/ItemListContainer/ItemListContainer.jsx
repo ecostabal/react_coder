@@ -11,14 +11,14 @@ function ItemListContainer() {
     const [products, setProducts] = useState([]);
     const { categoryId } = useParams();
   
-    async function requestProducts() {
-      let response = categoryId
-        ? await getCategoryData(categoryId)
-        : await getData();
-      setProducts(response);
-    }
-
     useEffect(() => {
+      async function requestProducts() {
+        let response = categoryId
+          ? await getCategoryData(categoryId)
+          : await getData();
+        setProducts(response);
+      }
+
         requestProducts();
       }, [categoryId]);
 

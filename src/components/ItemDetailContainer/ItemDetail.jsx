@@ -1,7 +1,7 @@
 import React from "react";
 
 function ItemDetail(props) {
-  const {products} = props;
+  const {product} = props;
     return (
         <div className="item-detail-container"> {/* Aplica la clase CSS para el contenedor principal */}
         <div>
