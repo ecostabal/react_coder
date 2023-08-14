@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./ItemCount.css";
 
 function ItemCount(props) {
   const [clickCount, setClickCount] = useState(1);
@@ -17,32 +18,13 @@ function ItemCount(props) {
   }
 
   return (
-    <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-        className="item-count-container"
-      >
-        <button className="item-count-button" onClick={handleClickSub}>
-          -
-        </button>
-        <h2 className="count-text">{clickCount}</h2>
-        <button className="item-count-button" onClick={handleClickAdd}>
-          +
-        </button>
+    <div className="counter-completo">
+      <div className="counter">
+        <button className="item-count-button" onClick={handleClickSub}>-</button>
+        <span className="count-text">{clickCount}</span>
+        <button className="item-count-button" onClick={handleClickAdd}>+</button>
       </div>
-      <button
-        //onClick={ props.onConfirm } -> Solo invocar la funcion
-        onClick={() => props.onConfirm(clickCount)} //-> Solo invocar la funcion + parametros
-        //onClick={(event) => props.onConfirm(clickCount, event)} // > Solo invocar la funcion + parametros + objeto event
-        className="item-count-button add-to-cart-button"
-      >
-        <h4>Añadir al carrito</h4>
-      </button>
+      <button onClick={() => props.onConfirm(clickCount)} className="item-count-button add-to-cart-button">Añadir al carrito</button>
     </div>
   );
 }

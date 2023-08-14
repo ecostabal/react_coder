@@ -3,6 +3,7 @@ import ButtonComponent from "../ButtonComponent/ButtonComponent";
 import "./Item.css";
 
 
+
 function Item(props) {
     const {id, title,description, img, price, stock} = props;
 

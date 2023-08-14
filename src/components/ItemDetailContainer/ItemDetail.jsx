@@ -42,7 +42,6 @@ function ItemDetailContainer() {
     <Link to="/">
     <ButtonComponent>Volver al inicio</ButtonComponent>
     </Link>
-    <button class="item-detail-add-to-cart">Agregar</button>
   </div>
   );
 }
