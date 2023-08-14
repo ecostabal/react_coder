@@ -3,6 +3,7 @@ import Item from "../Item/Item";
 import "./ItemListContainer.css";
 import getData, { getCategoryData } from "../../services/asyncMock";
 import { useParams } from "react-router-dom";
+import ItemList from "../ItemList/ItemList";
 
 
 
@@ -21,13 +22,7 @@ function ItemListContainer() {
         requestProducts();
       }, [categoryId]);
 
-    return (
-        <div className="divContainer">
-            {products.map((item) => (
-                <Item key={item.id} {...item} />
-            ))}
-        </div>
-    )
+    return <ItemList products={products}/>
 }
 
 export default ItemListContainer;
