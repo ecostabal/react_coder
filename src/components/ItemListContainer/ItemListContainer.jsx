@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Item from "../Item/Item";
 import "./ItemListContainer.css";
 import getData, { getCategoryData } from "../../services/asyncMock";
 import { useParams } from "react-router-dom";

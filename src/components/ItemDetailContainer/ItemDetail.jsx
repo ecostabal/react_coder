@@ -13,9 +13,13 @@ function ItemDetail(props) {
         <div>
           <h4 className="item-detail-price">{product.price}</h4> {/* Aplica la clase CSS para el precio */}
           <small className="item-detail-description">{product.description}</small> {/* Aplica la clase CSS para la descripción */}
+        
         </div>
-        {/* El botón de "Agregar al carrito" no está en el código JSX original,
-            puedes agregarlo aquí utilizando la clase "item-detail-add-to-cart" */}
+        <ItemCount stock={4} onConfirm={handleAddToCart} />
+        <Link to="/">
+        <ButtonComponent>Volver al inicio</ButtonComponent>
+        </Link>
+        <button class="item-detail-add-to-cart">Agregar</button>
       </div>
     )
 }
