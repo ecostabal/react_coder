@@ -11,10 +11,11 @@ function CartContextProvider(props) {
     if (isInCart(product.id)) {
       const indexUpdate = cart.findIndex((item) => item.id === product.id);
       newCart[indexUpdate].count += count;
+      newCart[indexUpdate].totalPrice = newCart[indexUpdate].count * newCart[indexUpdate].price;
       setCart(newCart);
     }
     else {
-      const newItemInCart = { ...product, count };
+      const newItemInCart = { ...product, count, totalPrice: product.price * count };
       newCart.push(newItemInCart);
       setCart(newCart);
     }
@@ -44,10 +45,10 @@ function CartContextProvider(props) {
     return total;
   }
 
-  function getTotalPriceInCart() {
+  function calculateTotalPrice() {
     let total = 0;
     cart.forEach((item) => {
-      total += item.count * item.price;
+      total += item.totalPrice;
     });
     return total;
   }
@@ -60,7 +61,7 @@ function CartContextProvider(props) {
         removeItem,
         clearCart,
         getTotalItemsInCart,
-        getTotalPriceInCart,
+        calculateTotalPrice,
         getItemInCart,
       }}
     >

@@ -34,7 +34,7 @@ function ItemListContainer() {
         );
       } else {
         return products.length === 0 ? (
-          <p className="loader">No hay productos disponibles para esa consulta.</p>
+          <p className="loader">No hay productos disponibles para esta categoría.</p>
         ) : (
           <ItemList products={products} />
         );
