@@ -57,7 +57,7 @@ function ItemDetailContainer() {
         <p>No hay stock disponible</p>
       )}
     {itemInCart && (
-      <p>¡Agregaste {itemInCart.count} unidades de este producto!</p>
+        <p>¡Agregaste {itemInCart.count} unidades de este producto!</p>
     )}
     <Link to="/">
         <button className="volverBoton">Volver al inicio</button>

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import "./CartContainer.css";
 import { cartContext } from "../../context/cartContext";
+import { Link } from 'react-router-dom';
 
 function CartContainer() {
     const { cart, removeItem, clearCart, calculateTotalPrice } = useContext(cartContext);
@@ -14,16 +15,22 @@ function CartContainer() {
                 cart.map((item) => (
                     <div className="cart-item" key={item.id}>
                         <img src={item.img} alt="" />
+                        <Link to={`/product/${item.id}`}>
+                            <img src={item.img} alt="" />
+                        </Link>
                         <h2>{item.title} (x{item.count})</h2>
-                        <p>$ {item.price} (Subtotal: $ {item.count * item.price})</p>
-                        <button className="eliminarBoton" onClick={() => removeItem(item.id)}>Eliminar Item</button>
+                        <p>Valor Unitario: ${item.price} (Subtotal: ${item.count * item.price})</p>
+                        <button className="eliminarBoton" onClick={() => removeItem(item.id)}>Eliminar Item(s)</button>
+                        <Link to={`/product/${item.id}`}>
+                            <button className="verProductoBoton">Ver Producto</button>
+                        </Link>
                     </div>
                 ))
             )}
             {cart.length > 0 && (
                 <div className="cart-buttons">
                     <p className="cart-total">💰 Total: $ {calculateTotalPrice().toFixed(2)}</p>
-                    <button>Checkout</button>
+                    <button>Proceed to Checkout</button>
                     <button onClick={clearCart}>Vaciar Carrito</button>
                 </div>
             )}
