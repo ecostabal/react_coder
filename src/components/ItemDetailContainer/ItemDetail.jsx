@@ -4,6 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
 import ItemCount from "../ItemCount/ItemCount";
 import { cartContext } from "../../context/cartContext";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function ItemDetailContainer() {
   const [product, setProduct] = useState({});
@@ -23,8 +25,8 @@ function ItemDetailContainer() {
 
   function handleAddToCart(clickCount) {
     addToCart(product, clickCount);
-    alert(`Producto agregado al carrito, cantidad: ${clickCount}`);
     setIsAddedToCart(true);
+    toast.success(`${clickCount} producto(s) agregado(s).`);
   }
 
   return (
@@ -43,7 +45,7 @@ function ItemDetailContainer() {
     {product.stock > 0 ? (
         /* Si tenemos STOCK */
         isAddedToCart ? (
-          <button className="irAlCarrito" href="/cart">Ir al carrito</button>
+          <Link to="/cart" className="irAlCarrito">Ir al carrito</Link>
         ) : (
           <ItemCount stock={4} onConfirm={handleAddToCart} />
         )
@@ -54,6 +56,7 @@ function ItemDetailContainer() {
     <Link to="/">
         <button className="volverBoton">Volver al inicio</button>
     </Link>
+    <ToastContainer/>
   </div>
   );
 }
