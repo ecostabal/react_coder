@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { getProductData } from "../../services/asyncMock";
+import { getProductData } from "../../services/firebase";
 import { Link, useParams } from "react-router-dom";
 import "./ItemDetailContainer.css";
 import ItemDetail from "./ItemDetail";
-import { Ping } from "@uiball/loaders"; // Importa el componente Ping
+import { Ping } from "@uiball/loaders";
 
 function ItemDetailContainer() {
   const [product, setProduct] = useState({});
-  const [isLoading, setIsLoading] = useState(true); // Agrega estado para el loading
+  const [isLoading, setIsLoading] = useState(true);
   const { id } = useParams();
 
   async function requestProduct() {
     const response = await getProductData(id);
     setProduct(response);
-    setIsLoading(false); // Actualiza el estado una vez que se obtiene el producto
+    setIsLoading(false);
   }
 
   useEffect(() => {

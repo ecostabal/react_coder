@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { getProductData } from "../../services/asyncMock";
+import { getData, getProductData } from "../../services/firebase";
 import { Link, useParams } from "react-router-dom";
 import ButtonComponent from "../ButtonComponent/ButtonComponent";
 import ItemCount from "../ItemCount/ItemCount";

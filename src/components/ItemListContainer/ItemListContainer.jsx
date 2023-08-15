@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./ItemListContainer.css";
-import getData, { getCategoryData } from "../../services/asyncMock";
+import { getData, getCategoryData } from "../../services/firebase";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import { Ping } from "@uiball/loaders";
