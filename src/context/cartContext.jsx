@@ -11,7 +11,7 @@ function CartContextProvider(props) {
     if (isInCart(product.id)) {
       const indexUpdate = cart.findIndex((item) => item.id === product.id);
       newCart[indexUpdate].count += count;
-      newCart[indexUpdate].totalPrice = newCart[indexUpdate].count * newCart[indexUpdate].price;
+      newCart[indexUpdate].totalPrice = newCart[indexUpdate].count * newCart[indexUpdate].price; // Actualiza el totalPrice con el nuevo cálculo
       setCart(newCart);
     }
     else {

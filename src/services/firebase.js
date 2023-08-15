@@ -6,7 +6,8 @@ import {
   doc,
   getDoc,
   where,
-  query
+  query,
+  addDoc,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -57,4 +58,18 @@ async function getCategoryData(category) {
   return docsData;
 }
 
-export { getData, getProductData, getCategoryData };
+async function createOrder(orderData) {
+  const collectionRef = collection(db, "orders")
+  const docCreated = await addDoc(collectionRef, orderData)
+
+  return(docCreated.id)
+}
+
+async function getOrder(id) {
+  const docRef = doc(db, "order", id);
+  const docSnapshot = await getDoc(docRef);
+
+  return { ...docSnapshot.data(), id: docSnapshot.id }
+}
+
+export { getData, getProductData, getCategoryData, createOrder, getOrder };
