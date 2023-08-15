@@ -24,11 +24,10 @@ function CartContainer() {
             {cart.length > 0 && ( // Solo muestra el precio total y el botón de checkout si el carrito no está vacío
                 <div>
                     Precio total de la compra es $ {cart[0].totalPrice}
+                    <button>Checkout</button>
                 </div>
             )}
-            <button>Checkout</button>
         </div>
-        
     )
 }
 
