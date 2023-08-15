@@ -6,3 +6,10 @@
     justify-content: space-evenly;
     row-gap: 60px;
 }
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
