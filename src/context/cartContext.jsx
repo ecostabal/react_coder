@@ -2,35 +2,41 @@ import { useState, createContext } from "react";
 
 const cartContext = createContext({ cart: [] });
 
-// Custom provider
-// CartContextProvider (custom componente) !== cartContext.Provider (componente default)
 
 function CartContextProvider(props) {
   const [cart, setCart] = useState([]);
 
-  const prueba = "otra prueba";
-
   function addToCart(product, count) {
-    //const newCart = [...cart];
     const newCart = cart.map((item) => item);
-    const newItemInCart = { count, ...product };
-    newCart.push(newItemInCart);
-    setCart(newCart);
-    //setCart( [...cart, { ...product, count}])
+    if (isInCart(product.id)) {
+      const indexUpdate = cart.findIndex((item) => item.id === product.id);
+      newCart[indexUpdate].count += count;
+      setCart(newCart);
+    }
+    else {
+      const newItemInCart = { ...product, count };
+      newCart.push(newItemInCart);
+      setCart(newCart);
+    }
+  }
+
+  function isInCart(id) {
+    return cart.some((item) => item.id === id);
+  }
+
+  function getItemInCart(id) {
+    return cart.find((item) => item.id === id);
   }
 
   function removeItem(id) {
-    //
-    return null;
+    setCart(cart.filter((item) => item.id !== id));
   }
 
   function clearCart() {
-    return null;
-    // vaciar el carrito
+    setCart([]);
   }
 
   function getTotalItemsInCart() {
-    // reduce()
     let total = 0;
     cart.forEach((item) => {
       total += item.count;
@@ -38,20 +44,24 @@ function CartContextProvider(props) {
     return total;
   }
 
-  function getItem(id) {
-    //find item
-    return cart[0];
+  function getTotalPriceInCart() {
+    let total = 0;
+    cart.forEach((item) => {
+      total += item.count * item.price;
+    });
+    return total;
   }
 
   return (
     <cartContext.Provider
       value={{
         cart,
-        prueba,
         addToCart,
         removeItem,
         clearCart,
         getTotalItemsInCart,
+        getTotalPriceInCart,
+        getItemInCart,
       }}
     >
       {props.children}

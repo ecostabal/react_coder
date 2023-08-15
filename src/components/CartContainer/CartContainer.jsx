@@ -3,12 +3,12 @@ import "./CartContainer.css";
 import { cartContext } from "../../context/cartContext";
 
 function CartContainer() {
-    const { cart, removeItem } = useContext(cartContext);
+    const { cart, removeItem, clearCart } = useContext(cartContext);
     
     return (
         <div>
             <h1>Cart</h1>
-            {cart.length === 0 ? ( // Agrega el condicional para verificar si el carrito está vacío
+            {cart.length === 0 ? (
                 <p>El carrito está vacío</p>
             ) : (
                 cart.map((item) => (
@@ -21,10 +21,11 @@ function CartContainer() {
                     </div>
                 ))
             )}
-            {cart.length > 0 && ( // Solo muestra el precio total y el botón de checkout si el carrito no está vacío
+            {cart.length > 0 && (
                 <div>
                     Precio total de la compra es $ {cart[0].totalPrice}
                     <button>Checkout</button>
+                    <button onClick={clearCart}>Vaciar Carrito</button> {/* Llama a clearCart al hacer clic */}
                 </div>
             )}
         </div>
