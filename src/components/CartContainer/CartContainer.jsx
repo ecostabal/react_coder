@@ -9,13 +9,13 @@ function CartContainer() {
     const { cart, removeItem, clearCart, calculateTotalPrice } = useContext(cartContext);
     const [orderId, setOrderId] = useState(null);
     const [orderDate, setOrderDate] = useState(null);
-
+    
     async function handleCheckout() {
         const currentDate = new Date();
         const orderData = {
             items: cart,
             buyer: { name: "Enrique", email: "ecostabal@miuandes.cl", phone: "56976184596" },
-            date: currentDate,
+            date: currentDate, // No es necesario usar setOrderDate() aquí
             total: calculateTotalPrice(),
         }
         const idOrder = await createOrder(orderData);
@@ -28,9 +28,9 @@ function CartContainer() {
         <div className="cart-widget">
         {orderId ? (
             <OrderConfirmation orderId={orderId} cart={cart} orderDate={orderDate} />
-        ) : (
+            ) : (
             <>
-                <h1 className="tituloCarrito">🛒 Tu carrito de compras</h1>
+                <h1 className="tituloCarrito">🛒 Tu carrito de compras test</h1>
                 {cart.length === 0 ? (
                     <p className="carritoVacioTxt">El carrito está vacío</p>
                 ) : (
