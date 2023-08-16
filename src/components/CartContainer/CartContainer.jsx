@@ -48,7 +48,9 @@ function CartContainer() {
                         ))}
                         <div className="cart-buttons">
                             <p className="cart-total">💰 Total: $ {calculateTotalPrice().toFixed(2)}</p>
-                            <button onClick={handleCheckout}>Proceed to Checkout</button>
+                            <Link to="/checkout">
+                                <button>Proceed to Checkout</button>
+                            </Link>
                             <button onClick={clearCart}>Vaciar Carrito</button>
                         </div>
                     </div>
