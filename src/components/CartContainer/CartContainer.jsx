@@ -30,7 +30,7 @@ function CartContainer() {
             <OrderConfirmation orderId={orderId} cart={cart} orderDate={orderDate} />
             ) : (
             <>
-                <h1 className="tituloCarrito">🛒 Tu carrito de compras test</h1>
+                <h1 className="tituloCarrito">🛒 Tu carrito de compras</h1>
                 {cart.length === 0 ? (
                     <p className="carritoVacioTxt">El carrito está vacío</p>
                 ) : (
