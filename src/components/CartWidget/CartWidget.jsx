@@ -11,7 +11,7 @@ function CartWidget() {
     return (
         <Link className="carrito" to="/cart">
             <div>
-                <img className="icono" src="./assets/cart-shopping-solid.svg" alt="Carrito" />
+                <img className="icono" src="https://www.svgrepo.com/show/506143/cart-1.svg" alt="Carrito" />
                 {totalItemsInCart > 0 && <p>{totalItemsInCart}</p>}
             </div>
         </Link>
