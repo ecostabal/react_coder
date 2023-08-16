@@ -1,0 +1,49 @@
+/* OrderConfirmation.css */
+
+.order-confirmation-container {
+    text-align: center;
+    padding: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  .order-confirmation-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: rgb(54, 54, 54);
+  }
+
+  .order-confirmation-container img {
+    width: 100px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .order-confirmation-container p {
+    font-size: 18px;
+    color: rgb(54, 54, 54);
+  }
+  
+
+  .order-confirmation-container button {
+    align-items: center;
+    cursor: pointer;
+    margin-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius:  5px;
+    height: 60px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    background-color:rgb(228, 228, 228);
+    color: rgb(54, 54, 54);
+    border: 0px;
+  }
+
+  .order-confirmation-container button:hover {
+    background-color:rgb(208, 208, 208);
+  }
+
+  

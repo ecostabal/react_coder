@@ -21,7 +21,7 @@ function App() {
             <Route path="/product/:id" element={<ItemDetailContainer/>}/>
             <Route path="/cart" element={<CartContainer/>}></Route>
             <Route path="/checkout" element={<Checkout/>}></Route>
-            <Route path="/order-confirmation/:id" element={ <OrderConfirmation/>}/>
+            <Route path="/order-confirmation/:id" element={<OrderConfirmation />} />
             <Route path="*" element={<h1>Page not found!</h1>}/>
           </Routes>
         </BrowserRouter>

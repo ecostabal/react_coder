@@ -63,3 +63,7 @@
     color: white;
     border: 0px;
 }
+
+.irAlCarrito:hover {
+    background-color:rgb(35, 116, 64);
+}

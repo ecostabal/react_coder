@@ -1,13 +1,14 @@
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { cartContext } from "../../context/cartContext";
 import { createOrder } from "../../services/firebase";
-import { useContext, useState } from "react";
+import "./Checkout.css";
 
 function Checkout() {
   const [buyer, setBuyer] = useState({
     firstname: "",
     lastname: "",
-    age: "",
+    email: "",
   });
 
   const navigate = useNavigate();
@@ -24,8 +25,10 @@ function Checkout() {
 
     try {
       const idOrder = await createOrder(orderData);
-      console.log(`Gracias por tu compra, tu numero de orden es ${idOrder}`);
+      console.log("Antes de la redirección");
+
       navigate(`/order-confirmation/${idOrder}`);
+      console.log("Después de la redirección");
     } catch (error) {
       alert(`No se pudo realizar la compra ${error.message}`);
     }
@@ -34,7 +37,6 @@ function Checkout() {
   function onInputChange(evt) {
     const value = evt.target.value;
     const field = evt.target.name;
-    //buyer["firstname"] -> buyer.firstname
     const newState = { ...buyer };
     newState[field] = value;
     setBuyer(newState);
@@ -45,18 +47,16 @@ function Checkout() {
     setBuyer({
       firstname: "",
       lastname: "",
-      age: "",
+      email: "",
     });
   }
 
   return (
-    <form>
-      <h2>Completa tus datos para completar la compra🛍</h2>
+    <form className="checkout-form">
+      <h2>😎 ¡Estás a un sólo paso de comprar tus productos!</h2>
 
-      <div style={{ display: "flex", marginBottom: 8 }}>
-        <label htmlFor="lastname" style={{ width: "100px", marginRight: 4 }}>
-          Nombre
-        </label>
+      <div className="input-group">
+        <label htmlFor="firstname">Nombre</label>
         <input
           value={buyer.firstname}
           name="firstname"
@@ -65,10 +65,8 @@ function Checkout() {
         />
       </div>
 
-      <div style={{ display: "flex", marginBottom: 8 }}>
-        <label htmlFor="lastname" style={{ width: "100px", marginRight: 4 }}>
-          Apellido
-        </label>
+      <div className="input-group">
+        <label htmlFor="lastname">Apellido</label>
         <input
           value={buyer.lastname}
           name="lastname"
@@ -77,25 +75,26 @@ function Checkout() {
         />
       </div>
 
-      <div style={{ display: "flex", marginBottom: 8 }}>
-        <label style={{ width: "100px", marginRight: 4 }}>Edad</label>
+      <div className="input-group">
+        <label htmlFor="age">Email</label>
         <input
-          value={buyer.age}
-          name="age"
-          type="number"
+          value={buyer.email}
+          name="email"
+          type="email"
           onChange={onInputChange}
         />
       </div>
 
       <button
-        disabled={
-          !(buyer.firstname !== "" && buyer.lastname !== "" && buyer.age !== "")
-        }
+        className="confirm-button"
+        disabled={!(buyer.firstname && buyer.lastname && buyer.email)}
         onClick={handleCheckout}
       >
         Confirmar Compra
       </button>
-      <button onClick={resetForm}>Cancelar</button>
+      <button className="cancel-button" onClick={resetForm}>
+        Cancelar
+      </button>
     </form>
   );
 }
