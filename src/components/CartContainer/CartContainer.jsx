@@ -32,7 +32,12 @@ function CartContainer() {
             <>
                 <h1 className="tituloCarrito">🛒 Tu carrito de compras</h1>
                 {cart.length === 0 ? (
+                    <>
+                    <div className="carritoVacio">
+                        <img src="https://www.svgrepo.com/show/529448/cart-cross.svg" alt=""/>
+                    </div>
                     <p className="carritoVacioTxt">El carrito está vacío</p>
+                    </>
                 ) : (
                     <div>
                         {cart.map((item) => (
