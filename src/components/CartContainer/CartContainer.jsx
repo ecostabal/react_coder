@@ -39,7 +39,7 @@ function CartContainer() {
                             <div className="cart-item" key={item.id}>
                                 <img src={item.img} alt={item.title} />
                                 <h2>{item.title} (x{item.count})</h2>
-                                <p>Valor Unitario: ${item.price} (Subtotal: ${item.count * item.price})</p>
+                                <p>Valor Unitario: ${item.price} (Subtotal: ${(item.count * item.price).toFixed(2)})</p>
                                 <button className="eliminarBoton" onClick={() => removeItem(item.id)}>Eliminar Item(s)</button>
                                 <Link to={`/product/${item.id}`}>
                                     <button className="verProductoBoton">Ver Producto</button>
