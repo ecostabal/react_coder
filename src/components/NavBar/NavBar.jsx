@@ -7,7 +7,7 @@ export default function NavBar(){
     <div className="encabezado">
         <div className="logo">
             <h2>🐶 Bass Pet Store</h2>
-        </div>
+        </div>       
         <div className="menu">
             <ul>
                 <li className="nav-item">
