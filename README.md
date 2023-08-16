@@ -1,3 +1,7 @@
+# Proyecto desarrollado durante el curso de REACT en Coderhouse
+
+Proyecto finalizado el 15 de Agosto de 2023.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

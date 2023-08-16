@@ -36,7 +36,7 @@
     height: 30px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 12px;
-    background-color:rgb(228, 228, 228);
+    background-color:rgb(246, 246, 246);
     color: rgb(54, 54, 54);
     border: 0px;
     cursor: pointer;
@@ -47,7 +47,7 @@
 }
 
 .verProductoBoton:hover {
-    background-color:rgb(208, 208, 208);
+    background-color:rgb(235, 235, 235);
 }
 
 .carritoVacioTxt {
@@ -127,13 +127,13 @@
     width: 100%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 18px;
-    background-color:rgb(228, 228, 228);
+    background-color:rgb(246, 246, 246);
     color: rgb(54, 54, 54);
     border: 0px;
 }
   
 .cart-buttons button:hover {
-    background-color:rgb(208, 208, 208);
+    background-color:rgb(235, 235, 235);
 }
 
 .cart-buttons button:last-child {

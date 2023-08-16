@@ -1,5 +1,6 @@
 .btn {
     position: absolute;
+    cursor: pointer;
     border-radius:  5px;
     border: 1px black;
     padding: 20px;
